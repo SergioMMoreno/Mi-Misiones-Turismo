@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f0ece2;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    z-index: 1;
+}
+
+.contenedor-body {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat (3, auto);
+
+    grid-template-areas:
+        "header header header"
+        "contenido contenido contenido"
+        "footer footer footer"
+    ;
+}
+
+.contenedor-body>div,
+.contenedor-body .header,
+.contenedor-body .contenido,
+.contenedor-body .footer {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contenedor-body .header {
+    background: #c7b198;
+    color: #fff;
+    grid-area: header;
+}
+
+.contenedor-body .contenido {
+    background-color: #dfd3c331;
+    grid-area: contenido;
+}
+
+
+.contenedor-body .footer {
+    background: #596e79;
+    color: #fff;
+    grid-area: footer;
+
+}
+
+@media screen and (max-width: 768px) {
+    .contenedor-body {
+        grid-template-areas:
+            "header header header"
+            "contenido contenido contenido"
+            "footer footer footer"
+        ;
+    }
+}
+
+/* barra de navegacion */
+.nav-bar {
+    height: 80px;
+    width: 100%;
+}
+
+label.logo {
+    color: #596e79;
+    font-size: 30px;
+    line-height: 80px;
+    padding: 0 0 0 10px;
+    font-weight: bold;
+}
+
+.nav-bar ul {
+    float: right;
+    margin-right: 20px;
+}
+
+.nav-bar ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0px;
+}
+
+.nav-bar ul li a {
+    color: #faf3f3;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-bar a:hover,
+.nav-bar a.active {
+    background: #596e79;
+    transition: .5s;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check-bar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    label.logo {
+        font-size: 24px;
+        /* padding-left: 0px; */
+    }
+
+    .nav-bar ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #596e79;
+        top: 145px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 100;
+    }
+
+    .nav-bar ul li {
+        display: block;
+        margin: 50px;
+        line-height: 30px;
+    }
+
+    .nav-bar ul li a {
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .nav-bar ul li a:hover {
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .nav-bar a:hover,
+    .nav-bar a.active {
+        background: none;
+        color: #596e79;
+    }
+
+    #check-bar:checked~ul {
+        left: 0;
+    }
+}
+
+/* /barra de navegacion */
+
+/* contenido */
+
+.subcontenido {
+    font-size: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.subcontenido>* {
+    padding: 10px;
+    margin: 10px;
+    flex: 1 100%;
+    border-radius: 10px;
+}
+
+.sepa-nat,
+.sepa-cult,
+.sepa-hote,
+.sepa-gastro {
+    height: 80px;
+}
+
+h4 {
+    padding: 32px 0 0 0;
+    color: #596e79;
+}
+
+
+
+.conten-item-uno,
+.conten-item-dos,
+.conten-item-tres,
+.conten-item-cuatro {
+    background-color: #f0ece2;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex: 50%;
+    flex-wrap: wrap;
+    border-radius: 7px;
+    -webkit-box-shadow: 0px 14px 15px -19px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 14px 15px -19px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 14px 15px -19px rgba(0, 0, 0, 0.75);
+}
+
+.conten-item-uno>div,
+.conten-item-dos>div,
+.conten-item-tres>div,
+.conten-item-cuatro>div {
+    height: 150px;
+    width: 150px;
+    border: solid 3px #e2c9a9;
+    border-radius: 50%;
+    justify-content: flex-end;
+}
+
+.conten-item-uno>div:hover,
+.conten-item-dos>div:hover,
+.conten-item-tres>div:hover,
+.conten-item-cuatro>div:hover {
+    border: solid  5px #cc904b;
+    height: 170px;
+    width: 170px;
+    transition-duration: 0.2s ease-out;
+    -webkit-box-shadow: 0px 14px 60px -21px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 14px 60px -21px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 14px 60px -21px rgba(0, 0, 0, 0.75);
+}
+
+.conten-item-uno:hover,
+.conten-item-dos:hover,
+.conten-item-tres:hover,
+.conten-item-cuatro:hover{
+    background-color: #dfd3c3;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+
+@media screen and (max-width: 768px) {
+
+    .conten-item-uno>div,
+    .conten-item-dos>div,
+    .conten-item-tres>div,
+    .conten-item-cuatro>div {
+        height: 90px;
+        width: 90px;
+    }
+
+    .conten-item-uno,
+    .conten-item-dos,
+    .conten-item-tres,
+    .conten-item-cuatro {
+        flex-direction: column;
+    }
+}
+
+.btn-modal{
+    color: #f0ece2;
+    padding: 0 15%;
+    font-size: 20px;
+    color: #596e7900;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+}
+.btn-modal:hover{
+    color: #000000;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 40%;
+    background-color: #e2c9a9a1;
+}
+
+
+/* /contenido */
+
+/* footer */
+.footer {
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-gap: 3px;
+    /* height: 100%;    */
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat (2, auto);
+    grid-template-areas:
+        "footer-sobremi footer-contactos footer-links"
+        "footer-copy footer-copy footer-copy"
+
+    ;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        grid-template-areas:
+            "footer-sobremi"
+            "footer-contactos"
+            "footer-links"
+            "footer-copy"
+        ;
+        width: 100%;
+        height: 400px;
+    }
+}
+
+.footer .footer-copy {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 20px;
+    color: white;
+}
+
+.footer .footer-sobremi ul li,
+.footer .footer-contactos ul li,
+.footer .footer-links ul li {
+    list-style: none;
+}
+
+.footer .footer-sobremi ul li a,
+.footer .footer-links ul li a {
+    text-decoration: none;
+    color: #c7b198;
+}
+
+.footer .footer-sobremi ul li a:hover,
+.footer .footer-links ul li a:hover {
+    color: #3edbf0;
+}
+
+
+/* /footer */
+
+
+
+
+/*  imagenes en el circylo  */
+
+.nat-1 {
+    background-image: url(../img/img-quehacer/ecoturismo.JPG);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.nat-2 {
+    background-image: url(../img/img-quehacer/obs-aves.JPG);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.nat-3 {
+    background-image: url(../img/img-quehacer/sustenta.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.nat-4 {
+    background-image: url(../img/img-quehacer/tur-aventura.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.nat-5 {
+    background-image: url(../img/img-quehacer/aloja-selva.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.cult-1 {
+    background-image: url(../img/img-quehacer/pue-origi.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.cult-2 {
+    background-image: url(../img/img-quehacer/jesuitas.JPG);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.cult-3 {
+    background-image: url(../img/img-quehacer/tur-rural.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.cult-4 {
+    background-image: url(../img/img-quehacer/tur-fe.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.cult-5 {
+    background-image: url(../img/img-quehacer/museo.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.cult-6 {
+    background-image: url(../img/img-quehacer/fies-popu.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.hote-1 {
+    background-image: url(../img/img-quehacer/hote-1.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.hote-2 {
+    background-image: url(../img/img-quehacer/hote-2.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.hote-3 {
+    background-image: url(../img/img-quehacer/hote-3.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.hote-4 {
+    background-image: url(../img/img-quehacer/hote-4.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.gastro-1 {
+    background-image: url(../img/img-quehacer/gastro-museo.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.gastro-2 {
+    background-image: url(../img/img-quehacer/yerba-mate.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.gastro-3 {
+    background-image: url(../img/img-quehacer/gastrono-2.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
