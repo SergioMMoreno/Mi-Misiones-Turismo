@@ -2,12 +2,20 @@
 
 Pequeño proyecto de pagina web, donde en cada pagina voy aplicando lo aprendido, todavia falta arreglar el codigo y hacerlo mas reutilisable, tengo pensado aplicar Sass y el uso de React
 
-## Comenzando 🚀
 
 ## Construido con 🛠️
 
 Por ahora es solo codigo de html con css, mas pronto se le agregara un framework con vue.js o react, para el backend utilizaria python por el momento, pendiente a actualizar ...
+- HTML
+- CSS
+- Flexbox
+- CSS Grid
+- Boostrap 4
 
+### Enlaces
+
+- Codigo URL: [Github](https://github.com/SergioMMoreno/Mi-Misiones-Turismo)
+- Sitio en la web URL: [Netlify](https://friendly-kare-f989f1.netlify.app/)
 
 ### Recursos útiles
 
